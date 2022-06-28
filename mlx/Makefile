@@ -1,5 +1,14 @@
-#
-#
+**************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/06/28 21:57:38 by shan              #+#    #+#              #
+#    Updated: 2022/06/28 23:01:57 by shan             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NOM=libmlx.a
 SRC= mlx_shaders.c mlx_new_window.m mlx_init_loop.m mlx_new_image.m mlx_xpm.c mlx_int_str_to_wordtab.c
