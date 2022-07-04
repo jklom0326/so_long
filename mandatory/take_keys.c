@@ -18,7 +18,7 @@ void    key_0(t_data *map, int *c)
 
     get_index(map, &x, &y);
     if (*c == 0)
-        map->img_cave
+        map->img_cave = map->img_cave_in;
     if (map->map[y][x - 1] == 'C')
     {
         map->map[y][x - 1] = 'P';
@@ -28,7 +28,7 @@ void    key_0(t_data *map, int *c)
     }
     if (map->map[y][x - 1] == '0')
     {
-        map->map[y][x - 1] = 'P'
+        map->map[y][x - 1] = 'P';
         map->map[y][x] = '0';
         count_moves(map);
     }
@@ -43,7 +43,7 @@ void	key_1(t_data *map, int *c)
 
 	get_index(map, &x, &y);
 	if (*c == 0)
-		map->img_d = map->img_c_d;
+        map->img_cave = map->img_cave_in;
 	if (map->map[y + 1][x] == 'C')
 	{
 		map->map[y + 1][x] = 'P';
@@ -68,7 +68,7 @@ void	key_2(t_data *map, int *c)
 
 	get_index(map, &x, &y);
 	if (*c == 0)
-		map->img_d = map->img_c_d;
+        map->img_cave = map->img_cave_in;
 	if (map->map[y][x + 1] == 'C')
 	{
 		map->map[y][x + 1] = 'P';
@@ -93,7 +93,7 @@ void	key_13(t_data *map, int *c)
 
 	get_index(map, &x, &y);
 	if (*c == 0)
-		map->img_d = map->img_c_d;
+        map->img_cave = map->img_cave_in;
 	if (map->map[y - 1][x] == 'C')
 	{
 		map->map[y - 1][x] = 'P';

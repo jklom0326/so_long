@@ -9,7 +9,6 @@
 /*   Updated: 2022/07/04 01:27:02 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "so_long.h"
 
 void    ft_free_map(t_data *data)
@@ -17,7 +16,7 @@ void    ft_free_map(t_data *data)
     int i;
 
     i = 0;
-    mix_destroy_window(data->mlx_ptr, data->mlx_win);
+    mlx_destroy_window(data->mlx_ptr, data->mlx_win);
     while (data->map[i])
         free(data->map[i++]);
     free(data->map);
@@ -62,9 +61,9 @@ int main(int ac, char **av)
                     ft_mapelines(&data) * 32, "so_long");
     take_img(&data);
     count_collect(&data);
-    draw_map(&data);
+    draw_on_map(&data);
     mlx_hook(data.mlx_win, 2, 0, &take_key, &data);
     mlx_hook(data.mlx_win, 17, 0, &take_key, &data);
-    mlx_loop_hook(data.mlx_ptr, draw_map, &data);
+    mlx_loop_hook(data.mlx_ptr, draw_on_map, &data);
     mlx_loop(data.mlx_ptr);
 }

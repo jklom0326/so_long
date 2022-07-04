@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "so_long.h"
 
-int ft_check_countent(char *s, t_data)
+int ft_check_countent(char *s, t_data *map)
 {
     map->c = 0;
     map->p = 0;
@@ -33,7 +33,7 @@ int ft_check_countent(char *s, t_data)
             map->e++;
         map->i++;
     }
-    if (map->p != 1 || map->e == 0 || map-> == 0 || map->z == 0)
+    if (map->p != 1 || map->e == 0 || map->c == 0 || map->z == 0)
         return (1);
     return (0);
 }
@@ -89,7 +89,7 @@ char    **ft_read_map(int fd)
     char    *s;
     t_data  m;
 
-    buf = (*char)malloc(sizeof(char) * (2));
+    buf = (char *)malloc(sizeof(char) * (2));
     if (!buf)
         return (NULL);
     m.c = 1;
@@ -98,13 +98,13 @@ char    **ft_read_map(int fd)
         m.c = read(fd, buf, 1);
         if (m.c == -1)
         {
-            free(buf)
+            free(buf);
             return (NULL);
         }
         buf[m.c] = '\0';
         s = ft_strjoin(s, buf);
     }
-    free(buf)
+    free(buf);
     m.map = ft_split(s, '\n');
     if(ft_check_map(m.map, s))
         ft_error(2);

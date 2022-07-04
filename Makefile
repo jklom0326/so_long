@@ -36,8 +36,8 @@ SRC			= mandatory/so_long.c\
 			mandatory/ft_utils.c \
 			mandatory/map_draw.c \
 			mandatory/read_map.c\
-			mandatory/so_long_utlis1.c\
-			mandatory/so_long_utlis2.c\
+			mandatory/so_long_utils1.c\
+			mandatory/so_long_utils2.c\
 			mandatory/take_keys.c\
 
 SRCB		= bonus/so_long_bonus.c\
@@ -61,20 +61,20 @@ OBJB		= $(SRCB:.c=.o)
 
 all			: $(NAME)
 
-$(NAME)		: $(OBJ) $(INC)
-			$(CC) $(CFLAG) $(MLX) $(SRC) -o $(NAME)
+$(NAME)		: $(OBJ) 
+			$(CC) $(CFLAG) $(SRC) -o $(NAME) $(LINK)
 
 bonus		: $(BONUS)
 
 $(BONUS)	: $(OBJB) $(INCB)
-			$(CC) $(CFLAGS) $(MLX) $(SRCB) -o $(BONUS)
+			$(CC) $(CFLAGS) $(LINK) $(SRCB) -o $(BONUS)
 
 clean		:
-			@rm -rf $(NAME)
-			@rm -fr $(BONUS)
+			rm -rf $(OBJ)
+			rm -fr $(OBJB)
 
 fclean		: clean
-			@rm -rf $(NAME)
-			@rm -rf $(BONUS)
+			rm -rf $(OBJ)
+			rm -rf $(OBJB)
 
 re			: fclean all bonus

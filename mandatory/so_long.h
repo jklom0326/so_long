@@ -12,14 +12,15 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# include "../mlx/mlx.h"
+# include "../minilibx-linux/mlx.h"
 # include <unistd.h>
 # include <stdlib.h>
-# include <mlx.h>
 # include <fcntl.h>
 
 typedef struct t_data
 {
-	char	**map
+	char	**map;
 	int		c;
 	int		p;
 	int		e;
@@ -57,7 +58,7 @@ void	ft_free_map(t_data *data);
 void	ft_game_msg(int n, t_data *data);
 char	**ft_read_map(int fd);
 int		ft_check_map(char **map, char *s);
-int 	ft_check_wall(char **map, int *k)
+int 	ft_check_wall(char **map, int *k);
 int		ft_check_countent(char *s, t_data *map);
 int		ft_mapelines(t_data *n);
 void	get_index(t_data *map, int *x, int *y);
@@ -66,7 +67,6 @@ int		draw_on_map(t_data *data);
 void	draw_map(t_data *data, int j);
 void	move_trainer(t_data *m);
 int		take_key(int key, t_data *m);
-void	get_index(t_data *map, int *x, int *y);
 void	count_collect(t_data *data);
 void	count_moves(t_data *data);
 void	key_0(t_data *map, int *c);

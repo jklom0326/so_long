@@ -56,20 +56,20 @@ void    move_trainer(t_data *m)
 void    draw_map(t_data *data, int j)
 {
     if (data->map[data->i][j] == '1')
-        mlx_xpm_file_to_window(data->mlx_ptr, data->mlx_win, \
-        data->img_tree * 32, data->i * 32);
+        mlx_put_image_to_window(data->mlx_ptr, data->mlx_win, \
+        data->img_tree, j * 32, data->i * 32);
     if (data->map[data->i][j] == '0')
-        mlx_xpm_file_to_window(data->mlx_ptr, data->mlx_win, \
-        data->img_ground * 32, data->i * 32);
+        mlx_put_image_to_window(data->mlx_ptr, data->mlx_win, \
+        data->img_ground, j * 32, data->i * 32);
     if (data->map[data->i][j] == 'C')
-        mlx_xpm_file_to_window(data->mlx_ptr, data->mlx_win, \
-        data->img_monster_ball * 32, data->i * 32);
+        mlx_put_image_to_window(data->mlx_ptr, data->mlx_win, \
+        data->img_monster_ball, j * 32, data->i * 32);
     if (data->map[data->i][j] == 'E')
-        mlx_xpm_file_to_window(data->mlx_ptr, data->mlx_win, \
-        data->img_cave * 32, data->i * 32);
+        mlx_put_image_to_window(data->mlx_ptr, data->mlx_win, \
+        data->img_cave, j * 32, data->i * 32);
     if (data->map[data->i][j] == 'P')
-        mlx_xpm_file_to_window(data->mlx_ptr, data->mlx_win, \
-        data->img_trainer * 32, data->i * 32);
+        mlx_put_image_to_window(data->mlx_ptr, data->mlx_win, \
+        data->img_trainer, j * 32, data->i * 32);
 }
 
 int     draw_on_map(t_data *data)

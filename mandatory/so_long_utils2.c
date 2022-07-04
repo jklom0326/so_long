@@ -47,7 +47,7 @@ void    count_collect(t_data *data)
         }
         i++;
     }
-    return (0);
+    return ;
 }
 
 void    count_moves(t_data *data)
@@ -72,7 +72,7 @@ void    ft_game_msg(int n, t_data *data)
 {
     if (n == 1)
     {
-        write(1, 'WIN ! \n', 8);
+        write(1, "WIN ! \n", 8);
         ft_free_map(data);
         exit (0);
     }
