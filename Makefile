@@ -36,8 +36,8 @@ SRC			= mandatory/so_long.c\
 			mandatory/ft_utils.c \
 			mandatory/map_draw.c \
 			mandatory/read_map.c\
-			mandatory/so_long_utls1.c\
-			mandatory/so_long_utls2.c\
+			mandatory/so_long_utlis1.c\
+			mandatory/so_long_utlis2.c\
 			mandatory/take_keys.c\
 
 SRCB		= bonus/so_long_bonus.c\

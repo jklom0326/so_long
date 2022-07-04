@@ -70,4 +70,23 @@ void    draw_map(t_data *data, int j)
     if (data->map[data->i][j] == 'P')
         mlx_xpm_file_to_window(data->mlx_ptr, data->mlx_win, \
         data->img_trainer * 32, data->i * 32);
-} 
+}
+
+int     draw_on_map(t_data *data)
+{
+    int     j;
+
+    data->i = 0;
+    move_trainer(data);
+    while (data->map[data->i])
+    {
+        j = 0;
+        while (data->map[data->i][j])
+        {
+            draw_map(data, j);
+            j++;
+        }
+        data->i++;
+    }
+    return (0);
+}
