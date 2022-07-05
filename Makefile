@@ -13,9 +13,6 @@
 NAME		= so_long
 BONUS		= so_long_bonus
 
-LIBFT		= libft
-LIBFT_LIB	= libft.a
-
 CC			= gcc
 CFLAG		= -Wall -Werror -Wextra
 
@@ -29,29 +26,29 @@ else
 	LINK	= -L $(MLX) -lmlx -lXext -lX11 -lm -lbsd
 endif
 
-SRC			= mandatory/so_long.c\
-			mandatory/ft_split.c \
-			mandatory/ft_strjoin.c \
-			mandatory/ft_strlcpy.c \
-			mandatory/ft_utils.c \
-			mandatory/map_draw.c \
-			mandatory/read_map.c\
-			mandatory/so_long_utils1.c\
-			mandatory/so_long_utils2.c\
-			mandatory/take_keys.c\
+SRC			= so_long.c\
+			ft_split.c \
+			ft_strjoin.c \
+			ft_strlcpy.c \
+			ft_utils.c \
+			map_draw.c \
+			read_map.c\
+			so_long_utils1.c\
+			so_long_utils2.c\
+			take_keys.c\
 
-SRCB		= bonus/so_long_bonus.c\
-			bonus/ft_split.c \
-			bonus/ft_strjoin.c \
-			bonus/ft_strlcpy.c \
-			bonus/ft_strlen.c \
-			bonus/map_draw_bonus.c \
-			bonus/read_map_bonus.c\
-			bonus/so_long_bonus_utls1.c\
-			bonus/so_long_bonus_utls2.c\
-			bonus/take_keys_bonus.c\
-			bonus/mouve_enemy.c\
-			bonus/mouves_in_win.c
+SRCB		= so_long_bonus.c\
+			ft_split_bonus.c \
+			ft_strjoin_bonus.c \
+			ft_strlcpy_bonus.c \
+			ft_utils_bonus.c \
+			map_draw_bonus.c \
+			read_map_bonus.c\
+			so_long_utils1_bonus.c\
+			so_long_utils2_bonus.c\
+			take_keys_bonus.c\
+			move_enemy.c\
+			moves_in_win.c
 
 INC			= so_long.h
 INCB		= so_long_bonus.h
@@ -61,20 +58,20 @@ OBJB		= $(SRCB:.c=.o)
 
 all			: $(NAME)
 
-$(NAME)		: $(OBJ) 
+$(NAME)		: $(OBJ) $(INC)
 			$(CC) $(CFLAG) $(SRC) -o $(NAME) $(LINK)
 
 bonus		: $(BONUS)
 
 $(BONUS)	: $(OBJB) $(INCB)
-			$(CC) $(CFLAGS) $(LINK) $(SRCB) -o $(BONUS)
+			$(CC) $(CFLAGS) $(SRCB) -o $(BONUS) $(LINK)
 
 clean		:
 			rm -rf $(OBJ)
 			rm -fr $(OBJB)
 
 fclean		: clean
-			rm -rf $(OBJ)
-			rm -rf $(OBJB)
+			rm -rf $(NAME)
+			rm -rf $(BONUS)
 
 re			: fclean all bonus
