@@ -9,7 +9,8 @@
 /*   Updated: 2022/07/04 01:42:08 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"so_long_bonus.h"
+
+#include "so_long_bonus.h"
 
 static size_t	ft_count(char const *s, char c)
 {
@@ -53,7 +54,7 @@ static char	**ft_free( char **tab, int i)
 	return (NULL);
 }
 
-static char	**ft_rir_norm(char const *s, char c)
+static char	**ft_malloc(char const *s, char c)
 {
 	int		i;
 	int		words;
@@ -84,5 +85,5 @@ char	**ft_split(char const *s, char c)
 {
 	if (!s)
 		return (NULL);
-	return (ft_rir_norm(s, c));
+	return (ft_malloc(s, c));
 }

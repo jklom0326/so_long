@@ -9,7 +9,7 @@
 /*   Updated: 2022/07/04 01:56:18 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"so_long_bonus.h"
+#include "so_long_bonus.h"
 
 char	*ft_strjoin(char *s1, char *s2)
 {

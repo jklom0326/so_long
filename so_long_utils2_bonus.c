@@ -9,7 +9,7 @@
 /*   Updated: 2022/07/04 16:52:49 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"so_long_bonus.h"
+#include "so_long_bonus.h"
 
 void	get_index_enemy(t_data *map, int *x, int *y)
 {

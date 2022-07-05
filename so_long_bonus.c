@@ -9,42 +9,43 @@
 /*   Updated: 2022/07/04 01:27:02 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "so_long.h"
+#include "so_long_bonus.h"
 
-void    ft_free_map(t_data *data)
+void	ft_free_map(t_data *data)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    mlx_destroy_window(data->mlx_ptr, data->mlx_win);
-    while (data->map[i])
-        free(data->map[i++]);
-    free(data->map);
+	i = 0;
+	mlx_destroy_window(data->mlx_ptr, data->mlx_win);
+	while (data->map[i])
+		free(data->map[i++]);
+	free(data->map);
 }
 
-int ft_exit(t_data *data)
+void	ft_check(int ac, char **av)
 {
-    write(1,"exit~ \n", 8);
-    ft_free_map(data);
-    exit (0);
-    return (0);
+	char	*s;
+
+	if (ac != 2)
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
+	if (ft_strrchr(av[1], '.') == 0)
+		ft_error(3);
+	s = ft_strrchr(av[1], '.');
+	if (ft_strcmp(s, ".ber") != 0)
+		ft_error(3);
 }
 
-void    ft_check(int ac, char **av)
+int	ft_exit(t_data *data)
 {
-    char    *s;
-
-    if (ac != 2)
-    {
-        write(2, "ERROR\n", 6);
-        exit (1);
-    }
-    if (ft_strrchr(av[1], '.' ) == 0)
-        ft_error(3);
-    s = ft_strrchr(av[1], '.');
-    if (ft_strcmp(s, ".ber") != 0)
-        ft_error(3); 
+	write(1, "You Quit !\n", 12);
+	ft_free_map(data);
+	exit (0);
+	return (0);
 }
+
 
 int main(int ac, char **av)
 {

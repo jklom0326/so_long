@@ -9,32 +9,32 @@
 /*   Updated: 2022/07/04 16:13:45 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"so_long_bonus.h"
+#include "so_long_bonus.h"
 
-void    key_0(t_data *map, int *c)
-{
-    int x;
-    int y;
+void	key_0(t_data *map, int *c)
+{	
+	int		x;
+	int		y;
 
-    get_index(map, &x, &y);
-    if (*c == 0)
-        map->cave = map->cave_in;
-    if (map->map[y][x - 1] == 'C')
-    {
-        map->map[y][x - 1] = 'P';
-        map->map[y][x] = '0';
-        count_moves(map);
-        (*c)--;
-    }
-    if (map->map[y][x - 1] == '0')
-    {
-        map->map[y][x - 1] = 'P';
-        map->map[y][x] = '0';
-        count_moves(map);
-    }
-    if (map->map[y][x - 1] == 'E' && *c == 0)
-        ft_game_msg(1, map);
-	if (map->map[y][x - 1] == 'T')
+	get_index(map, &x, &y);
+	if (*c == 0)
+		map->cave = map->cave_in;
+	if (map->map[y][x - 1] == 'C')
+	{
+		map->map[y][x - 1] = 'P';
+		map->map[y][x] = '0';
+		count_moves(map);
+		(*c)--;
+	}
+	if (map->map[y][x - 1] == '0')
+	{
+		map->map[y][x - 1] = 'P';
+		map->map[y][x] = '0';
+		count_moves(map);
+	}
+	if (map->map[y][x - 1] == 'E' && *c == 0)
+		ft_game_msg(1, map);
+	if (map->map[y][x - 1] == 'F')
 		ft_game_msg(2, map);
 }
 
@@ -45,7 +45,7 @@ void	key_1(t_data *map, int *c)
 
 	get_index(map, &x, &y);
 	if (*c == 0)
-        map->cave = map->cave_in;
+		map->cave = map->cave_in;
 	if (map->map[y + 1][x] == 'C')
 	{
 		map->map[y + 1][x] = 'P';
@@ -61,7 +61,7 @@ void	key_1(t_data *map, int *c)
 	}
 	if (map->map[y + 1][x] == 'E' && *c == 0)
 		ft_game_msg(1, map);
-	if (map->map[y + 1][x] == 'T')
+	if (map->map[y + 1][x] == 'F')
 		ft_game_msg(2, map);
 }
 
@@ -72,7 +72,7 @@ void	key_2(t_data *map, int *c)
 
 	get_index(map, &x, &y);
 	if (*c == 0)
-        map->cave = map->cave_in;
+		map->cave = map->cave_in;
 	if (map->map[y][x + 1] == 'C')
 	{
 		map->map[y][x + 1] = 'P';
@@ -88,7 +88,7 @@ void	key_2(t_data *map, int *c)
 	}
 	if (map->map[y][x + 1] == 'E' && *c == 0)
 		ft_game_msg(1, map);
-	if (map->map[y][x + 1] == 'T')
+	if (map->map[y][x + 1] == 'F')
 		ft_game_msg(2, map);
 }
 
@@ -115,7 +115,7 @@ void	key_13(t_data *map, int *c)
 	}
 	if (map->map[y - 1][x] == 'E' && *c == 0)
 		ft_game_msg(1, map);
-	if (map->map[y - 1][x] == 'T')
+	if (map->map[y - 1][x] == 'F')
 		ft_game_msg(2, map);
 }
 

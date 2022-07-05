@@ -9,12 +9,7 @@
 /*   Updated: 2022/07/04 02:02:05 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"so_long_bonus.h"
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
+#include "so_long_bonus.h"
 
 void	ft_putstr(char *s)
 {

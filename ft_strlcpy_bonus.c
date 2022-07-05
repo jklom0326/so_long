@@ -9,7 +9,7 @@
 /*   Updated: 2022/07/04 02:02:32 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"so_long_bonus.h"
+#include "so_long_bonus.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

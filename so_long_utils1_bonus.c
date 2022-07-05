@@ -9,7 +9,7 @@
 /*   Updated: 2022/07/04 16:52:53 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include"so_long_bonus.h"
+#include "so_long_bonus.h"
 
 int	check_all(char *s, t_data *map)
 {

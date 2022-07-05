@@ -12,13 +12,10 @@
 #ifndef SO_LONG_BONUS_H
 # define SO_LONG_BONUS_H
 
-# include "./mlx/mlx.h"
-# include "./minilibx-linux/mlx.h"
 # include <unistd.h>
 # include <stdlib.h>
+# include "./minilibx-linux/mlx.h"
 # include <fcntl.h>
-# include <math.h>
-
 typedef struct t_data
 {
 	char	**map;
@@ -31,17 +28,16 @@ typedef struct t_data
 	int		b;
 	int		moves;
 	void	*ground;
-	void	*monster_ball;
+	void	*trainer;
+	void	*rival;
 	void	*cave;
 	void	*cave_in;
 	void	*tree;
-	void	*trainer;
-	void	*rival;
+	void	*monster_ball;
 	void	*mlx_ptr;
 	void	*mlx_win;
 }t_data;
 
-char	*get_next_line(int fd);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char *s1, char *s2);
@@ -65,7 +61,7 @@ void	get_index(t_data *map, int *x, int *y);
 void	take_img(t_data *data);
 int		draw_map(t_data *data);
 void	draw_map_2(t_data *data, int j);
-void	move_trainer(t_data *m);
+void	move_player(t_data *m);
 int		take_key(int key, t_data *m);
 void	get_index(t_data *map, int *x, int *y);
 void	count_collect(t_data *data);
@@ -74,7 +70,7 @@ void	key_0(t_data *map, int *c);
 void	key_1(t_data *map, int *c);
 void	key_2(t_data *map, int *c);
 void	key_13(t_data *map, int *c);
-void	moves_in_win(t_data *data);
+void	move_in_win(t_data *data);
 void	get_index_enemy(t_data *map, int *x, int *y);
 void	ft_enemy_move(t_data *data);
 int		check_all(char *s, t_data *map);
