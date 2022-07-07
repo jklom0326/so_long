@@ -28,6 +28,7 @@ typedef struct t_data
 	int		i;
 	int		a;
 	int		b;
+	int		ci;
 	int		moves;
 	void	*ground;
 	void	*monster_ball;

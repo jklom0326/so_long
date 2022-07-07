@@ -18,7 +18,7 @@ void	key_0(t_data *map, int *c)
 
 	get_index(map, &x, &y);
 	if (*c == 0)
-		map->img_d = map->img_c_d;
+		map->cave = map->cave_in;
 	if (map->map[y][x - 1] == 'C')
 	{
 		map->map[y][x - 1] = 'P';
