@@ -33,7 +33,7 @@ int     ft_check_countent(char *s, t_data *map)
 			map->e++;
 		map->i++;
 	}
-	if (map->p != 1 || map->e == 0 || map->c == 0 || map->z == 0)
+	if (map->p != 1 || map->e == 0 || map->c == 0 )
 		return (1);
 	return (0);
 }

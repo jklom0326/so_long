@@ -61,7 +61,6 @@ void	move_in_win(t_data *data)
 	char	*s;
 
 	s = ft_itoa(data->moves);
-	mlx_string_put(data->mlx_ptr, data->mlx_win, 0, 0,0xffffff , "moves :");
-	mlx_string_put(data->mlx_ptr, data->mlx_win, 80, 0,0xffffff , s);
+	mlx_string_put(data->mlx_ptr, data->mlx_win, 24, 36, 0xFF0000, s);
 	free(s);
 }
