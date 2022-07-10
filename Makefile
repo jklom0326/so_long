@@ -6,14 +6,14 @@
 #    By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/10 23:19:32 by shan              #+#    #+#              #
-#    Updated: 2022/07/10 23:21:10 by shan             ###   ########.fr        #
+#    Updated: 2022/07/11 00:34:54 by shan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= so_long
 BONUS		= so_long_bonus
 
-CC			= gcc
+CC			= cc
 CFLAG		= -Wall -Werror -Wextra
 
 OS			= $(shell uname -s)
