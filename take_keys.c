@@ -6,7 +6,7 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 16:13:45 by shan              #+#    #+#             */
-/*   Updated: 2022/07/04 16:13:45 by shan             ###   ########.fr       */
+/*   Updated: 2022/07/10 23:25:25 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "so_long.h"
@@ -43,7 +43,7 @@ void	key_1(t_data *map, int *c)
 
 	get_index(map, &x, &y);
 	if (*c == 0)
-        map->cave = map->cave_in;
+		map->cave = map->cave_in;
 	if (map->map[y + 1][x] == 'C')
 	{
 		map->map[y + 1][x] = 'P';
@@ -68,7 +68,7 @@ void	key_2(t_data *map, int *c)
 
 	get_index(map, &x, &y);
 	if (*c == 0)
-        map->cave = map->cave_in;
+		map->cave = map->cave_in;
 	if (map->map[y][x + 1] == 'C')
 	{
 		map->map[y][x + 1] = 'P';

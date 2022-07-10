@@ -6,13 +6,12 @@
 /*   By: shan <shan@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 14:02:17 by shan              #+#    #+#             */
-/*   Updated: 2022/07/04 01:15:47 by shan             ###   ########.fr       */
+/*   Updated: 2022/07/10 23:26:35 by shan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "./mlx/mlx.h"
 # include "./minilibx-linux/mlx.h"
 # include <unistd.h>
 # include <stdlib.h>
@@ -28,7 +27,6 @@ typedef struct t_data
 	int		i;
 	int		a;
 	int		b;
-	int		ci;
 	int		moves;
 	void	*ground;
 	void	*monster_ball;
@@ -57,10 +55,10 @@ void	ft_error(int n);
 int		ft_exit(t_data *data);
 void	ft_free_map(t_data *data);
 void	ft_game_msg(int n, t_data *data);
-char    **ft_read_map(int fd);
+char	**ft_read_map(int fd);
 int		ft_check_map(char **map, char *s);
-int     ft_check_wall(char **map, int *k);
-int     ft_check_countent(char *s, t_data *map);
+int		ft_check_wall(char **map, int *k);
+int		ft_check_countent(char *s, t_data *map);
 int		ft_mapelines(t_data *n);
 void	get_index(t_data *map, int *x, int *y);
 void	take_img(t_data *data);
